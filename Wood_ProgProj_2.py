@@ -1,5 +1,4 @@
-# Name: Brittany Wood
-# Date: 10/20/2018
+# This project calculates loans.
 # Description: Programming Project 2
 
 
