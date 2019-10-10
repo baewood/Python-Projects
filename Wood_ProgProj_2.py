@@ -1,7 +1,6 @@
 # This project calculates loans.
 # Description: Programming Project 2
 
-
 def loan_amount():
     initial_loan = float(input("Please provide the requested loan amount: $"))
     while initial_loan < 500:
@@ -17,28 +16,30 @@ def number_payments(initial_loan):
     return number_payment 
     
 def interest_rates(initial_loan, number_payment):
-    if 500 <= initial_loan or initial_loan <= 2500:
-        if 6 <= number_payment or number_payment <= 12:
+    if 500 <= initial_loan and initial_loan <= 2500:
+        if 6 <= number_payment and number_payment <= 12:
             interest_rate = 0.08
-        elif 13 <= number_payment or number_payment <= 36:
+        elif 13 <= number_payment and number_payment <= 36:
             interest_rate = 0.10
         else:
             interest_rate = 0.12
-    elif 2501 <= initial_loan or initial_loan <= 10000:
-        if 6 <= number_payment or number_payment <= 12:
+    elif 2501 <= initial_loan and initial_loan <= 10000:
+        if 6 <= number_payment and number_payment <= 12:
             interest_rate = 0.07
-        elif 13 <= number_payment or number_payment <= 36:
+        elif 13 <= number_payment and number_payment <= 36:
             interest_rate = 0.08
         else:
             interest_rate = 0.06
     elif initial_loan >= 10001:
-        if 6 <= number_payment or number_payment <= 12:
+        if 6 <= number_payment and number_payment <= 12:
             interest_rate = 0.05
-        elif 13 <= number_payment or number_payment <= 36:
+        elif 13 <= number_payment and number_payment <= 36:
             interest_rate = 0.06
         else:
             interest_rate = 0.07
-    return interest_rate 
+
+    return interest_rate
+
     
 def main():
     loanAmount = loan_amount()
@@ -46,7 +47,8 @@ def main():
     interestRate = interest_rates(loanAmount, numofPayments)
 
     monthly = (loanAmount * interestRate * (1 + interestRate) * numofPayments / ((1 + interestRate) * numofPayments - 1))
+    IR = interestRate * 100
     
-    print("Loan Amount: $%4.2f , Number of Payments: %3d , Interest Rate: %3.2f , Monthly Payment of: $%3.2f " % (loanAmount, numofPayments, interestRate, monthly))
+    print("Loan Amount: ${:4.2f} , Number of Payments: ${:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loanAmount, numofPayments, IR, monthly))
 
 main()
