@@ -1,6 +1,5 @@
 # This project calculates loans.
 # Description: Programming Project 2
-
 def loan_amount():
     initial_loan = float(input("Please provide the requested loan amount: $"))
     while initial_loan < 500:
@@ -40,6 +39,25 @@ def interest_rates(initial_loan, number_payment):
 
     return interest_rate
 
+def repeat_program():
+    repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
+    while repeat == "Y" or repeat == "y":
+        initial_loan = float(input("Please provide the requested loan amount: $"))
+        number_payment = int(input("Please enter how many payments you would like to make on this loan: "))
+        repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
+
+        while initial_loan < 500:
+            print("We're sorry, but we do not finance loans under $500.\n")
+            initial_loan = float(input("Please provide the requested loan amount: $"))
+            number_payment = int(input("Please enter how many payments you would like to make on this loan: "))
+            repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
+
+            while number_payment < 6 or number_payment > 48:
+                print("We're sorry, but the minimum amount of payemnts is 6 months.\n")
+                number_payment = int(input("Please enter how many payments you would like to make on this loan: "))
+                repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
+
+    return repeat_program
     
 def main():
     loanAmount = loan_amount()
@@ -49,6 +67,15 @@ def main():
     monthly = (loanAmount * interestRate * (1 + interestRate) * numofPayments / ((1 + interestRate) * numofPayments - 1))
     IR = interestRate * 100
     
-    print("Loan Amount: ${:4.2f} , Number of Payments: ${:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loanAmount, numofPayments, IR, monthly))
+    print("Loan Amount: ${:4.2f} , Number of Payments: {:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loanAmount, numofPayments, IR, monthly))
+
+    repeat_program()
+
+    monthly = (loanAmount * interestRate * (1 + interestRate) * numofPayments / ((1 + interestRate) * numofPayments - 1))
+    IR = interestRate * 100
+    
+
+    print("Loan Amount: ${:4.2f} , Number of Payments: {:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loanAmount, numofPayments, IR, monthly))
 
 main()
+
