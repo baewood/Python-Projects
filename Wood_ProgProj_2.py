@@ -1,5 +1,7 @@
-# This project calculates loans.
+# This project calculates loans using functions and loops.
 # Description: Programming Project 2
+
+
 def loan_amount():
     initial_loan = float(input("Please provide the requested loan amount: $"))
     while initial_loan < 500:
