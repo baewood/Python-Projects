@@ -1,5 +1,5 @@
 
-#1. Input a set of numbers (integers) terminated by the value -999.
+# Input a set of numbers (integers) terminated by the value -999.
 # Calculate the average, the largest and smallest value in the set of numbers.
 
 
