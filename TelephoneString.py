@@ -35,8 +35,6 @@ def main():
             print(a,end="")
         else:
             print(b,end="")
-        
-    input("\nPress ENTER to exit.")
 
 main()
 
