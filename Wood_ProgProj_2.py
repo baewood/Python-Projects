@@ -42,6 +42,10 @@ def interest_rates(initial_loan, number_payment):
 
 def repeat_program():
     repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
+    
+    while repeat == "N" or repeat == "n":
+        return repeat_program
+
 
     while repeat == "Y" or repeat == "y":
         loan = loan_amount()
