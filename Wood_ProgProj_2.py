@@ -42,10 +42,6 @@ def interest_rates(initial_loan, number_payment):
 
 def repeat_program():
     repeat = input("Would you like to repeat the program? Y for yes, N for no: ")
-    
-    while repeat == "N" or repeat == "n":
-        return repeat_program
-
 
     while repeat == "Y" or repeat == "y":
         loan = loan_amount()
@@ -62,11 +58,16 @@ def repeat_program():
             print("We're sorry, but the minimum amount of payemnts is 6 months.\n")
             payment = int(input("Please enter how many payments you would like to make on this loan: "))
     
-    monthly_p = (loan * iRate * (1 + iRate) * payment / ((1 + iRate) * payment - 1))
-    rate = iRate * 100
+        monthly_p = (loan * iRate * (1 + iRate) * payment / ((1 + iRate) * payment - 1))
+        rate = iRate * 100
     
-    print("Loan Amount: ${:4.2f} , Number of Payments: {:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loan, payment, rate, monthly_p))
-    
+        print("Loan Amount: ${:4.2f} , Number of Payments: {:3d} , Interest Rate: {:3.2f}% , Monthly Payment of: ${:3.2f} ".format(loan, payment, rate, monthly_p))
+
+    while repeat == "N" or repeat == "n":
+        return repeat_program
+
+    return repeat_program
+
     
 def main():
     loanAmount = loan_amount()
