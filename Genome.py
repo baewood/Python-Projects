@@ -6,7 +6,8 @@
 #ATG, TAG, TAA, and TGA.
 
 def main():
-    strA = input("Enter a genome string: ") #Must start with TAGx3
+    strA = input("Enter a genome string: ") 
+    #Must start with TAGx3
     #must end with x3 TAG, TAA or TGA
     
 
