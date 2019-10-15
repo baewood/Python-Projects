@@ -35,8 +35,7 @@ def readingLevel(index):
     else:
         print("The text is at a fourth grade reading level.")
 
-        #Addition to the reading level equation to fit specs given by
-        #my professor during this project's construction.
+        #Addition to the reading level equation to fit specs given by my professor during this project's construction.
 
     for x in range(len(bigString)):
         if bigString[x] in "loveLOVE":
