@@ -4,8 +4,7 @@
 
 
 def main():
-
-
+    
     counter = 0
     total = 0
     val = 0 
